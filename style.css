@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    color: yellow;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    font-size: 3rem;
+}
+#root {
+    margin: 1rem;
+}
+.note {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin: 2px;
+    position: relative;
+    text-align: center;
+}
+
+.note::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: yellowgreen;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(1rem);
+}
+.word {
+    display: inline-block;
+    width: fit-content;
+    height: 2rem;
+    margin: 2px;
+    position: relative;
+    text-align: center;
+}
+.word::after {
+    content: "\00a0";
+}
+
+.controls {
+    position: absolute;
+    top: calc(100vh - 4rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+#current-song {
+    font-size: 1.5rem;
+}
+.btn {
+    font-size: 1rem;
+    font-weight: bold;
+    width: 7rem;
+    height: 3rem;
+    margin: 1rem;
+    padding: 1rem;
+    line-height: 1;
+    text-align: center;
+    flex: 1;
+    background-color: rgba(255, 255, 0, 0.5);
+    box-shadow: inset;
+    border-radius: 1rem;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 0, 1);
+}
+.btn:active {
+    background-color: rgba(255, 255, 0, 0.75);
+    box-shadow:         inset 0 0 5px rgba(100, 100, 0, .75);
+}
